@@ -1,0 +1,8 @@
+{
+  "project_name": "Example app",
+  "project_short_description": "",
+  "repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
+  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
+  "_copy_without_render": ["*.js", "*.tsx"],
+  "_ignore": [".venv/*", ".venv", "venv/*", "venv"]
+}
