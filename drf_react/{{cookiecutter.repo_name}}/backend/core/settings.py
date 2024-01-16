@@ -13,18 +13,29 @@ CORS_ALLOWED_ORIGINS = CORS_ORIGIN_WHITELIST
 CSRF_TRUSTED_ORIGINS = CORS_ORIGIN_WHITELIST
 
 
-INSTALLED_APPS = [
+
+
+COMMON_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
-    "corsheaders",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "corsheaders",
+]
+
+THIRD_PARTY_APPS = [
     "django_extensions",
-    "authentication",
+    "rest_framework",
     "drf_spectacular",
 ]
+
+PROJECT_APPS = ["authentication"]
+
+INSTALLED_APPS = COMMON_APPS + THIRD_PARTY_APPS + PROJECT_APPS
+
+
 
 SHELL_PLUS_IMPORTS = [
     "from mixer.backend.django import mixer",
@@ -42,7 +53,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "{{cookiecutter.project_slug}}.urls"
+ROOT_URLCONF = "core.urls"
 
 TEMPLATES = [
     {
@@ -64,7 +75,7 @@ SIMPLE_JWT = {
     "REFRESH_TOKEN_LIFETIME": timedelta(days=int(os.environ.get("REFRESH_TOKEN_LIFETIME_DAYS", 1))),
 }
 REST_FRAMEWORK = {
-    "DEFAULT_PAGINATION_CLASS": "{{cookiecutter.project_slug}}.paginators.ResultSetPagination",
+    "DEFAULT_PAGINATION_CLASS": "core.paginators.ResultSetPagination",
     "PAGE_SIZE": 10,
     "DEFAULT_AUTHENTICATION_CLASSES": ("rest_framework_simplejwt.authentication.JWTAuthentication",),
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
@@ -81,7 +92,7 @@ SPECTACULAR_SETTINGS = {
 }
 
 
-WSGI_APPLICATION = "{{cookiecutter.project_slug}}.wsgi.application"
+WSGI_APPLICATION = "core.wsgi.application"
 if ENVIRONMENT == "demo":
     DATABASES = {
         "default": {

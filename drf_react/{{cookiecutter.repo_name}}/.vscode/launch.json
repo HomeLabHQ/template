@@ -1,8 +1,13 @@
 {
   "version": "0.2.0",
   "compounds": [
+       {
+      "name": "fe+be",
+      "configurations": ["be-server", "fe-server"],
+      "stopAll": true
+    },
     {
-      "name": "server+client",
+      "name": "fe+be+browser",
       "configurations": ["be-server", "fe-server", "client"],
       "stopAll": true
     }
@@ -17,6 +22,7 @@
       "envFile": "${workspaceFolder}/.env",
       "args": ["test"],
       "django": true,
+      "consoleTitle": "BE tests",
       "justMyCode": false
     },
     {
@@ -27,6 +33,7 @@
       "cwd": "${workspaceFolder}/backend",
       "envFile": "${workspaceFolder}/.env",
       "args": ["runserver"],
+      "consoleTitle": "Django",
       "django": true,
       "justMyCode": false
     },
@@ -37,6 +44,7 @@
       "cwd": "${workspaceRoot}/frontend",
       "envFile": "${workspaceFolder}/.env",
       "runtimeExecutable": "npm",
+      "consoleTitle": "React",
       "runtimeVersion": "18.17.1",
       "runtimeArgs": ["run", "dev"]
     },
