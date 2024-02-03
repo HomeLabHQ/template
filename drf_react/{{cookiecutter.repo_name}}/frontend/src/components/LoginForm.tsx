@@ -38,7 +38,7 @@ export default function LoginForm() {
         {contextHolder}
         <Card style={{ width: 500 }}>
           <ThemeToggle />
-          <Title level={2}>Expiration tracker</Title>
+          <Title level={2}>Login</Title>
           <Form
             name="normal_login"
             className="login-form"

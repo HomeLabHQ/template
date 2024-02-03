@@ -24,14 +24,22 @@ ruff = "^0.1.11"
 
 [tool.poetry.group.test.dependencies]
 coverage = {extras = ["toml"], version = "^7.2.7"}
+
+[tool.poetry.group.docs.dependencies]
+mkdocs = "^1.5.3"
+mkdocs-material = "^9.5.6"
+mkdocs-awesome-pages-plugin = "^2.9.2"
+mkdocs-graphviz = "^1.5.3"
+mkdocstrings = "^0.24.0"
+
 [build-system]
 build-backend = "poetry.core.masonry.api"
 requires = ["poetry-core"]
 
 [tool.ruff]
-line-length = 120
 extend-select = ["I"]
 ignore = ['COM812', 'COM819', 'E501', 'Q000', 'Q001', 'Q002', 'Q003', 'W191', 'EM101']
+line-length = 120
 select = ["E", "F", "W", "I", "I001", "C4", "Q", "RUF", "PIE", "COM", "ERA", "FURB", "LOG", "T20", "PYI", "DJ", "EM"]
 # Exclude a variety of commonly ignored directories.
 exclude = [

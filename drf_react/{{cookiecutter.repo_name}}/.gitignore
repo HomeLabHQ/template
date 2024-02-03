@@ -10,3 +10,5 @@ README.md-e
 compose.override.yml
 # python coverage data
 .coverage
+# Mkdocs build
+site_data

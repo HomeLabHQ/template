@@ -84,8 +84,8 @@ REST_FRAMEWORK = {
     },
 }
 SPECTACULAR_SETTINGS = {
-    "TITLE": "Expiration tracker API",
-    "DESCRIPTION": "App to track expiration dates of medication and other goods",
+    "TITLE": "{{cookiecutter.repo_name}} API",
+    "DESCRIPTION": "{{cookiecutter.repo_name}}",
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
     "COMPONENT_SPLIT_REQUEST": True,

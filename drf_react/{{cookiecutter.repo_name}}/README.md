@@ -1,38 +1,20 @@
-<a name="readme-top"></a>
+# {{cookiecutter.repo_name}}
 
-<br />
+## Project description
 
-<div align="center">
-  <h3 align="center">{{cookiecutter.repo_name}}</h3>
-</div>
+Project description
 
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <a href="#demo">Demo</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-  </ol>
-</details>
+## Demo instance
 
-## About The Project
+To try this out access demo instance at [Demo]
+with credentials:
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+```js
+email:staging@example.com
+password:Test12345
+```
 
-### Built With
+## Built With
 
 [![Django][Django]][Django-url]
 [![React][React.js]][React-url]
@@ -40,12 +22,14 @@
 [![Vite][Vite]][Vite-url]
 [![Antd][Antd]][Antd-url]
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## Development environment
 
-## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+- Clone repository
+- Install requirement runtime
+- Install dependencies via `make setup`
+- Start dev dependencies via `make dev`
+- Start debug configurations located in `launch.json`
+- Init backend database via `make be_init`
 
 ### Prerequisites
 
@@ -59,35 +43,15 @@ Also strongly recommend using tools like nvm and pyenv for running specific vers
 
 > NOTE: Additionally install poetry self add poetry-dotenv-plugin to auto load env variables in shell and run command
 
-### Installation
+## Deploy
 
-1. Run `make setup`
-2. Initialize backend via `make be_init`
-   - Creates superuser from .env variables
-   - Run migrations
+There is 2 separate methods for deploy:
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+- Standalone included DB + Nginx that are accessible from outside `compose.yml`
+- Slim (without DB) and configurable port number to be exposed `compose.slim.yml`
 
-## Usage
-
-There are 2 methods of usage:
-
-- Development environment
-  - VScode debug config in you need to play around with debugger
-  - Run `make start`. Please note that in this case you will manually need to add env variables.
-
-Complete app to use
-
-- Launch docker stack `docker compose up -d`
-- Create superuser from .env `docker exec -it api python manage.py createsuperuser --no-input`
-- Access via `http://hostip`
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## Roadmap
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/oleksandr-korol/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
 [Antd]: https://img.shields.io/badge/antd-20232A?style=for-the-badge&logo=antdesign&logoColor=61DAFB
@@ -98,3 +62,4 @@ Complete app to use
 [Vite-url]: https://vitejs.dev/
 [Django]: https://img.shields.io/badge/Django-20232A?style=for-the-badge&logo=django&logoColor=61DAFB
 [Django-url]: https://www.djangoproject.com/
+[Demo]: https://expiration-tracker-staging.dufran.org/login
